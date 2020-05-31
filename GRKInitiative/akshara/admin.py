@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Letters
+from .models import Letters, TextBox
 
 # Register your models here.
 class LettersAdmin(admin.ModelAdmin):

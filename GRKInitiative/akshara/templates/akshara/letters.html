@@ -1,0 +1,27 @@
+{% extends 'akshara/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-md text-center">
+    <h1> Kannada Alphabets </h1>
+    <div class="card">
+        <div class="card">
+            <h1>{{ atoaha.all|join:" " }}</h1>
+            <br/>
+            <h1>{{ kaline.all|join:" " }}</h1>
+            <br/>
+            <h1>{{ chaline.all|join:" " }}</h1>
+            <br/>
+            <h1>{{ taline.all|join:" " }}</h1>
+            <br/>
+            <h1>{{ thaline.all|join:" " }}</h1>
+            <br/>
+            <h1>{{ paline.all|join:" " }}</h1>
+            <br/>
+            <h1>{{ yaline.all|join:" " }}</h1>
+        </div>
+    </div>
+    <br/>
+    <a href="{% url 'home' %}"> Back </a>
+</div>
+
+{% endblock %}

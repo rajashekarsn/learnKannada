@@ -9,8 +9,8 @@ class Letters(models.Model):
         return self.letter
 
 
-class a(models.Model):
-    letter = models.CharField(max_length=30)
+class TextBox(models.Model):
+    textbox = models.TextField(max_length=300)
 
     def __str__(self):
-        return self.letter
+        return self.textbox

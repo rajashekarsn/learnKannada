@@ -1,0 +1,16 @@
+{% extends 'akshara/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-md text-center">
+    <h1> Random Letter </h1>
+    <div class="card">
+        <div class="card">
+            <h1 class="display-1">{{ random_choice }}</h1>
+        </div>
+    </div>
+    <br/>
+    <a href="{% url 'randomletter' %}"> Generate Random Letter </a>
+    <br/>
+    <a href="{% url 'home' %}"> Back </a>
+</div>
+{% endblock %}
