@@ -10,12 +10,19 @@
     </div>
 </div>
 <div class="container-md text-center">
-
+<p>{{textbox|safe}}</p>
     <a href="{% url 'letters' %}">Kannada Alphabets </a>
+    <br/>
+    <a href="{% url 'words4letter' %}">Words for a letter </a>
     <br/>
     <a href="{% url 'randomletter' %}">Generate Random Letter </a>
     <br/>
     <a href="{% url 'randomletters' %}">Generate Random Letters </a>
-
+    <br/>
+    <a href="{% url 'randomengword' %}">Generate Random English Word </a>
+    <br/>
+    <a href="{% url 'randomkanword' %}">Generate Random Kannada Word </a>
+    <br/>
+    <a href="{% url 'randomimage' %}">Generate Random Image </a>
 </div>
 {% endblock %}

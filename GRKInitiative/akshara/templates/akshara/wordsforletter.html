@@ -1,0 +1,31 @@
+{% extends 'akshara/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-md text-center">
+    {% for item in alphabet %}
+        <h1>{{item }}</h1>
+        <div class="card border-primary">
+        {% for item_word in words_for_a_letter %}
+        {% if item.id == item_word.letter_id %}
+            <div class="card ">
+            <h1 class="display-1">{{ item_word.word }} </h1>
+            <br/>
+            {{ item_word.english_word }}
+            <br/>
+            <div class="card-img-center">
+                <img src="{{ item_word.word_image }}" alt="" style="width:300px; height:320px" class="center">
+            </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+        <br/>
+        <br/>
+        </div>
+    {% endfor %}
+
+        <div class="fixed-bottom">
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'home' %}">Back</a>
+        </div>
+
+</div>
+{% endblock %}

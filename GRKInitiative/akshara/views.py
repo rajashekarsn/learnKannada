@@ -1,14 +1,27 @@
 from django.shortcuts import render
-from .models import Letters
+from .models import Letters, TextBox, Words4Letter
 import random
 # Create your views here.
 
+
 def homepage(request):
-    letters = Letters.objects.all()
+    # letters = Letters.objects.all()
+    textbox = TextBox.objects.all()
     context = {
-        'letters': letters,
+        # 'letters': letters,
+        'textbox': textbox,
     }
     return render(request, 'akshara/home.html', context)
+
+
+def words4letterpage(request):
+    alphabet = Letters.objects.all()
+    words_for_a_letter = Words4Letter.objects.all()
+    context = {
+        'words_for_a_letter': words_for_a_letter,
+        'alphabet': alphabet,
+    }
+    return render(request, 'akshara/wordsforletter.html', context)
 
 
 def viewletters(request):
@@ -49,3 +62,29 @@ def randomletters(request):
     return render(request, 'akshara/randomletters.html', context)
 
 
+def random_eng_word(request):
+    word = [i.english_word for i in Words4Letter.objects.all()]
+    random_choice = random.choice(word)
+    context = {
+        'random_choice': random_choice,
+    }
+    return render(request, 'akshara/randomengword.html', context)
+
+
+def random_kan_word(request):
+    word = [i.word for i in Words4Letter.objects.all()]
+    random_choice = random.choice(word)
+    context = {
+        'random_choice': random_choice,
+    }
+    return render(request, 'akshara/randomkanword.html', context)
+
+
+def random_image(request):
+    img = [i.word_image for i in Words4Letter.objects.all()]
+    random_choice = random.choice(img)
+
+    context = {
+        'random_choice': random_choice,
+    }
+    return render(request, 'akshara/randomimage.html', context)
